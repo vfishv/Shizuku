@@ -70,6 +70,7 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
                 addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
             }
         }
+        //for developer
         addItem(LearnMoreViewHolder.CREATOR, null, ID_LEARN_MORE)
         notifyDataSetChanged()
     }
