@@ -44,6 +44,7 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
 
         if (adbPermission) {
             addItem(ManageAppsViewHolder.CREATOR, status to grantedCount, ID_APPS)
+            // Terminal
             addItem(TerminalViewHolder.CREATOR, status, ID_TERMINAL)
         }
 
