@@ -44,7 +44,8 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
 
         if (adbPermission) {
             addItem(ManageAppsViewHolder.CREATOR, status to grantedCount, ID_APPS)
-            addItem(TerminalViewHolder.CREATOR, status, ID_TERMINAL)
+            // Terminal
+            //addItem(TerminalViewHolder.CREATOR, status, ID_TERMINAL)
         }
 
         if (running && !adbPermission) {
@@ -56,7 +57,8 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
             val rootRestart = running && status.uid == 0
 
             if (root) {
-                addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
+                // for root
+                //addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R || EnvironmentUtils.getAdbTcpPort() > 0) {
@@ -66,10 +68,12 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
             addItem(StartAdbViewHolder.CREATOR, null, ID_START_ADB)
 
             if (!root) {
-                addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
+                // for root
+                //addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
             }
         }
-        addItem(LearnMoreViewHolder.CREATOR, null, ID_LEARN_MORE)
+        //for developer
+        //addItem(LearnMoreViewHolder.CREATOR, null, ID_LEARN_MORE)
         notifyDataSetChanged()
     }
 }
