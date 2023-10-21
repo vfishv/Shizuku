@@ -57,6 +57,7 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
             val rootRestart = running && status.uid == 0
 
             if (root) {
+                // for root
                 addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
             }
 
@@ -67,6 +68,7 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
             addItem(StartAdbViewHolder.CREATOR, null, ID_START_ADB)
 
             if (!root) {
+                // for root
                 addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
             }
         }
