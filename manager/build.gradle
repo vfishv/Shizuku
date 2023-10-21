@@ -1,18 +1,18 @@
 import java.nio.file.Paths
 
 plugins {
-    id('com.android.application')
-    //id('com.android.library')
+    //id('com.android.application')
+    id('com.android.library')
     id('kotlin-android')
     id('dev.rikka.tools.refine')
-    id('dev.rikka.tools.autoresconfig')
-    id('dev.rikka.tools.materialthemebuilder')
+//    id('dev.rikka.tools.autoresconfig')
+//    id('dev.rikka.tools.materialthemebuilder')
 }
 
 android {
     namespace 'moe.shizuku.manager'
     defaultConfig {
-        applicationId "moe.shizuku.privileged.api"
+        //applicationId "moe.shizuku.privileged.api"
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -42,7 +42,7 @@ android {
         release {
             signingConfig signingConfigs.sign
             minifyEnabled true
-            shrinkResources true
+            //shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -63,14 +63,15 @@ android {
             excludes += ['/META-INF/*.version', '/META-INF/*.kotlin_module', '/kotlin/**']
         }
     }
-    dependenciesInfo {
-        includeInApk false
-    }
+//    dependenciesInfo {
+//        includeInApk false
+//    }
     lint {
         checkReleaseBuilds false
     }
 }
 
+/*
 autoResConfig {
     generatedClassFullName = "rikka.shizuku.manager.ShizukuLocales"
     generateRes = false
@@ -78,6 +79,8 @@ autoResConfig {
     generateLocaleConfig = true
 }
 
+
+/*
 materialThemeBuilder {
     themes {
         shizuku {
@@ -91,6 +94,7 @@ materialThemeBuilder {
     generatePalette = true
     generateTextColors = true
 }
+*/
 
 def collapseReleaseResourceNames = task('collapseReleaseResourceNames').doLast {
     def aapt2 = Paths.get(project.android.sdkDirectory.path, 'build-tools', project.android.buildToolsVersion, 'aapt2')
@@ -109,12 +113,15 @@ def collapseReleaseResourceNames = task('collapseReleaseResourceNames').doLast {
     }
 }
 
+/*
 afterEvaluate {
     tasks.getByName('optimizeReleaseResources').finalizedBy(collapseReleaseResourceNames)
     tasks.getByName('preReleaseBuild').dependsOn(':shell:assembleRelease')
     tasks.getByName('preDebugBuild').dependsOn(':shell:assembleDebug')
 }
+*/
 
+/*
 android.applicationVariants.configureEach { variant ->
     variant.outputs.configureEach {
         outputFileName = "shizuku-v${variant.versionName}-${variant.name}.apk"
@@ -138,6 +145,7 @@ android.applicationVariants.configureEach { variant ->
         }
     }
 }
+*/
 
 configurations.configureEach {
     exclude group: 'androidx.appcompat', module: 'appcompat'
