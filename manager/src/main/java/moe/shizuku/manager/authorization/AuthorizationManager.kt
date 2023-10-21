@@ -50,7 +50,9 @@ object AuthorizationManager {
                 }
             }
             for (pi in allPackages) {
-                if (BuildConfig.APPLICATION_ID == pi.packageName) continue
+                val pkg = BuildConfig.APPLICATION_ID
+                //val pkg = "moe.shizuku.privileged.api"
+                if (pkg == pi.packageName) continue
                 if (pi.applicationInfo?.metaData?.getBoolean("moe.shizuku.client.V3_SUPPORT") != true) continue
                 if (pi.requestedPermissions?.contains(Manifest.permission.API_V23) != true) continue
 

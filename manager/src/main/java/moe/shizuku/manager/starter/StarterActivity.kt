@@ -200,7 +200,10 @@ private class ViewModel(context: Context, root: Boolean, host: String?, port: In
                Before MIUI Android 12, we can temporarily use /data/user_de.
                After that, is better to implement "adb push" and push files directly to /data/local/tmp.
              */
-            if (sb.contains("/Android/data/${BuildConfig.APPLICATION_ID}/start.sh: Permission denied")) {
+            //val pkg = BuildConfig.APPLICATION_ID
+            val pkg = BuildConfig.APPLICATION_ID
+            //val pkg = "moe.shizuku.privileged.api"
+            if (sb.contains("/Android/data/${pkg}/start.sh: Permission denied")) {
                 sb.append('\n')
                     .appendLine("adb have no permission to access Android/data, how could this possible ?!")
                     .appendLine("try /data/user_de instead...")
