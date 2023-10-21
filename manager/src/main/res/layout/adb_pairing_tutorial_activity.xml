@@ -91,6 +91,13 @@
                     android:textAppearance="?textAppearanceBodyMedium"
                     android:textColor="?colorOnErrorContainer" />
 
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:dividerDrawable="@drawable/flexboxlayout_divider"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_around"
+                    app:showDivider="middle">
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/notification_options"
                     android:layout_width="wrap_content"
@@ -104,6 +111,7 @@
                     app:iconTintMode="src_in"
                     app:icon="@drawable/ic_outline_open_in_new_24"
                     app:iconPadding="16dp" />
+                </com.google.android.flexbox.FlexboxLayout>
 
             </LinearLayout>
 

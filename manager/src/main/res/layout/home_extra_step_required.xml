@@ -51,6 +51,13 @@
         android:text="@string/home_adb_is_limited_description"
         android:textColor="?colorOnErrorContainer" />
 
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dividerDrawable="@drawable/flexboxlayout_divider"
+        app:flexWrap="wrap"
+        app:justifyContent="space_around"
+        app:showDivider="middle">
     <com.google.android.material.button.MaterialButton
         android:id="@android:id/button1"
         style="@style/CardButton"
@@ -59,6 +66,7 @@
         app:backgroundTint="?colorError"
         app:icon="@drawable/ic_outline_open_in_new_24"
         app:iconTint="?colorOnError" />
+    </com.google.android.flexbox.FlexboxLayout>
 
 
 </LinearLayout>

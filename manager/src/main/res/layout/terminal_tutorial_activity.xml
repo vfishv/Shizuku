@@ -92,6 +92,13 @@
                     android:text="@string/terminal_tutorial_1_description"
                     android:textColor="?android:textColorSecondary" />
 
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:dividerDrawable="@drawable/flexboxlayout_divider"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_around"
+                    app:showDivider="middle">
                 <Button
                     android:id="@android:id/button1"
                     android:layout_width="wrap_content"
@@ -99,6 +106,7 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/terminal_export_files"
                     android:textAllCaps="false" />
+                </com.google.android.flexbox.FlexboxLayout>
 
             </LinearLayout>
 

@@ -40,6 +40,13 @@
         android:layout_marginBottom="24dp"
         tools:text="@string/home_root_description" />
 
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dividerDrawable="@drawable/flexboxlayout_divider"
+        app:flexWrap="wrap"
+        app:justifyContent="space_around"
+        app:showDivider="middle">
     <com.google.android.material.button.MaterialButton
         android:id="@android:id/button1"
         style="@style/CardButton"
@@ -55,5 +62,6 @@
         android:visibility="gone"
         app:icon="@drawable/ic_server_restart"
         tools:visibility="visible" />
+    </com.google.android.flexbox.FlexboxLayout>
 
 </LinearLayout>
