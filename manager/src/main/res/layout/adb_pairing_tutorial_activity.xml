@@ -265,6 +265,13 @@
                     android:text="@string/adb_pairing_tutorial_content_left_is_clickable"
                     android:textColor="?colorError" />
 
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:dividerDrawable="@drawable/flexboxlayout_divider"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_around"
+                    app:showDivider="middle">
                 <Button
                     android:id="@+id/developer_options"
                     android:layout_width="wrap_content"
@@ -274,6 +281,7 @@
                     android:text="@string/development_settings"
                     app:icon="@drawable/ic_outline_open_in_new_24"
                     app:iconPadding="16dp" />
+                </com.google.android.flexbox.FlexboxLayout>
 
             </LinearLayout>
 
